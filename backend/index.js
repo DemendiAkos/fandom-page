@@ -11,7 +11,11 @@ const db=mysql.createPool({
     host:'localhost',
     user: 'root',
     password : '',
+<<<<<<< HEAD
     database: 'webprog',
+=======
+    database: 'lethal-company',
+>>>>>>> main2
 }).promise();
 
 app.get('/test',async (req,res)=>{
@@ -19,14 +23,23 @@ app.get('/test',async (req,res)=>{
 })
 
 app.get('/scrap', async (req,res)=>{
+<<<<<<< HEAD
     const [rows,fields]= await db.query('SELECT * FROM `lethalitems`')
+=======
+    const [rows,fields]= await db.query('SELECT * FROM `scraps`')
+>>>>>>> main2
     res.send(rows)
 })
 
 app.post('/scrap',jsonparser, async (req,res)=>{
     try{
+<<<<<<< HEAD
         let userdata = [req.body.Type, req.body.Price,req.body.Is5g]
         const insert = await db.query('INSERT INTO lethalitems(ScrapName,MiValue,MaValue,Value,Weight,Conductivity,IsTwoHanded) VALUES (?,?,?,?,?,?,?)',[userdata[0],userdata[1],userdata[2],userdata[3],userdata[4],userdata[5],userdata[6]]);
+=======
+        let userdata = [req.body.Scrapname, req.body.MinimumValue,req.body.MaximumValue,req.body.Weight,req.body.Conductivity,req.body.IsTwoHanded]
+        const insert = await db.query('INSERT INTO scraps(ScrapName,MinimumValue,MaximumValue,Weight,Conductivity,IsTwoHanded) VALUES (?,?,?,?,?,?)',[userdata[0],userdata[1],userdata[2],userdata[3],userdata[4],userdata[5]]);
+>>>>>>> main2
         res.status(201).send("Sikeres a szkrep felvétele!");
     }
     catch (error) {
