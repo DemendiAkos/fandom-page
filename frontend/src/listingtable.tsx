@@ -33,7 +33,7 @@ function Listtable() {
                     <th>AddButton</th>
                 </tr>
 {
-    scrap.map((scrap,index)=> (<tr key={index}><td>{scrap.ScrapName}</td> <td>{scrap.MinimumValue}</td><td>{scrap.Maximumvalue}</td><td>{(scrap.MinimumValue+scrap.Maximumvalue)/2}</td><td>{scrap.Weight}</td><td>{scrap.Conductivity}</td><td>{scrap.IsTwoHanded}</td><td><button>Add</button></td></tr>)) 
+    scrap.map((scrap,index)=> (<tr key={index}><td>{scrap.ScrapName}</td> <td>{scrap.MinimumValue}</td><td>{scrap.Maximumvalue}</td><td>{(scrap.MinimumValue+scrap.Maximumvalue)/2}</td><td>{scrap.Weight}</td><td>{scrap.Conductivity}</td><td>{scrap.IsTwoHanded}</td><td><button id={scrap.ScrapName}>Add</button></td></tr>)) 
 
 }
             </table>
