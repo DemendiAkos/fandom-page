@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Listtable from './listingtable'
+import Listtable from './components/listingtable'
 import './App.css'
 
 function App() {
