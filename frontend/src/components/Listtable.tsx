@@ -45,21 +45,25 @@ const Listtable: React.FC = () => {
     };
 
     return (
-        <div className="container-fluid mt-4">
-            <div className="row">
-                <div className="col-md-6">
-                    <div className="table-responsive">
-                        <ScrapTable scraps={scrap} onAdd={handleAddScrap} />
+        <div>
+
+            <h1 className="h1">Lethal Company Scrap Calculator</h1>
+            <div className="container-fluid mt-4">
+                <div className="row">
+                    <div className="col-md-6">
+                        <div className="table-responsive">
+                            <ScrapTable scraps={scrap} onAdd={handleAddScrap} />
+                        </div>
                     </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="table-responsive">
-                        <SelectedScrapTable 
-                            selectedScraps={selectedScraps} 
-                            totalValue={totalValue} 
-                            totalWeight={totalWeight} 
-                            onDelete={handleDeleteScrap} 
-                        />
+                    <div className="col-md-6">
+                        <div className="table-responsive">
+                            <SelectedScrapTable
+                                selectedScraps={selectedScraps}
+                                totalValue={totalValue}
+                                totalWeight={totalWeight}
+                                onDelete={handleDeleteScrap}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
