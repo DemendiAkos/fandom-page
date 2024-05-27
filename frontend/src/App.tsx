@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Listtable from './components/listingtable'
+import Listtable from './components/Listtable'
 import './App.css'
 
 function App() {
