@@ -1,0 +1,20 @@
+p, h3 {
+    color: white !important;
+}
+
+
+body {
+    background-color:rgb(33, 37, 41) !important;
+    color: white !important;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important ; 
+}
+
+button {
+    background-color: brown !important;
+    border-color: rgb(241, 82, 42) !important;
+}
+
+h1 {
+    text-align: center;
+}
+

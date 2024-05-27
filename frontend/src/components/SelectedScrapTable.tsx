@@ -9,7 +9,6 @@ interface SelectedScrapTableProps {
 }
 
 const SelectedScrapTable: React.FC<SelectedScrapTableProps> = ({ selectedScraps, totalValue, totalWeight, onDelete }) => {
-
     const calculateAverage = (min: number, max: number) => {
         if (typeof min === 'number' && typeof max === 'number') {
             return (min + max) / 2;
@@ -19,17 +18,22 @@ const SelectedScrapTable: React.FC<SelectedScrapTableProps> = ({ selectedScraps,
 
     return (
         <div>
-            <h2>Selected Scraps</h2>
-            <table>
-                <thead>
+            <div className="mb-4">
+                <h3 className="font-weight-bold">Total</h3>
+                <p>Total Value: {totalValue}</p>
+                <p>Total Weight: {totalWeight}</p>
+            </div>
+            <table className="table table-sm table-dark  table-hover">
+                <thead className="thead-dark">
                     <tr>
-                        <th>ScrapName</th>
-                        <th>MinimumValue</th>
-                        <th>Maximumvalue</th>
-                        <th>AverageValue</th>
-                        <th>Weight</th>
-                        <th>Conductivity</th>
-                        <th>IsTwoHanded</th>
+                        <th scope="col">ScrapName</th>
+                        <th scope="col">MinimumValue</th>
+                        <th scope="col">Maximumvalue</th>
+                        <th scope="col">AverageValue</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">Conductivity</th>
+                        <th scope="col">IsTwoHanded</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -43,16 +47,14 @@ const SelectedScrapTable: React.FC<SelectedScrapTableProps> = ({ selectedScraps,
                             <td>{scrap.Conductivity}</td>
                             <td>{scrap.IsTwoHanded}</td>
                             <td>
-                                <button onClick={() => onDelete(scrap)}>Delete</button>
+                                <button onClick={() => onDelete(scrap)} className="btn btn-danger">
+                                    Delete
+                                </button>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-
-            <h3>Total</h3>
-            <p>Total Value: {totalValue}</p>
-            <p>Total Weight: {totalWeight}</p>
         </div>
     );
 };
