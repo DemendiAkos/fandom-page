@@ -49,7 +49,8 @@ const SelectedScrapTable: React.FC<SelectedScrapTableProps> = ({ selectedScraps,
                             <td>{calculateAverage(scrap.MinimumValue, scrap.Maximumvalue)}</td>
                             <td>{scrap.Weight}</td>
                             <td>{scrap.Conductivity}</td>
-                            <td>{scrap.IsTwoHanded ? "Yes" : "No"}</td>
+                            <td>{scrap.Conductivity? "Conductive" : "Not conductive"}</td>
+                            <td>{scrap.IsTwoHanded ? "Two Handed" : "One Handed"}</td>
                             <td>
                                 <button onClick={() => onDelete(scrap.id)} className="btn btn-danger">
                                     Delete
