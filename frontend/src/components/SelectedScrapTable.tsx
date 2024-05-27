@@ -1,11 +1,15 @@
 import React from 'react';
 import { Scrap } from "../scrap";
 
+interface SelectedScrap extends Scrap {
+    id: string;
+}
+
 interface SelectedScrapTableProps {
-    selectedScraps: Scrap[];
+    selectedScraps: SelectedScrap[];
     totalValue: number;
     totalWeight: number;
-    onDelete: (scrap: Scrap) => void;
+    onDelete: (id: string) => void;
 }
 
 const SelectedScrapTable: React.FC<SelectedScrapTableProps> = ({ selectedScraps, totalValue, totalWeight, onDelete }) => {
@@ -13,7 +17,7 @@ const SelectedScrapTable: React.FC<SelectedScrapTableProps> = ({ selectedScraps,
         if (typeof min === 'number' && typeof max === 'number') {
             return (min + max) / 2;
         }
-        return 'N/A';
+        return 'N/A'; 
     };
 
     return (
@@ -23,7 +27,7 @@ const SelectedScrapTable: React.FC<SelectedScrapTableProps> = ({ selectedScraps,
                 <p>Total Value: {totalValue}</p>
                 <p>Total Weight: {totalWeight}</p>
             </div>
-            <table className="table table-sm table-dark  table-hover">
+            <table className="table table-dark table-hover">
                 <thead className="thead-dark">
                     <tr>
                         <th scope="col">ScrapName</th>
@@ -33,21 +37,21 @@ const SelectedScrapTable: React.FC<SelectedScrapTableProps> = ({ selectedScraps,
                         <th scope="col">Weight</th>
                         <th scope="col">Conductivity</th>
                         <th scope="col">IsTwoHanded</th>
-                       
+                        <th scope="col">DeleteButton</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {selectedScraps.map((scrap, index) => (
-                        <tr key={index}>
+                    {selectedScraps.map((scrap) => (
+                        <tr key={scrap.id}>
                             <td>{scrap.ScrapName}</td>
                             <td>{scrap.MinimumValue}</td>
                             <td>{scrap.Maximumvalue}</td>
                             <td>{calculateAverage(scrap.MinimumValue, scrap.Maximumvalue)}</td>
                             <td>{scrap.Weight}</td>
                             <td>{scrap.Conductivity}</td>
-                            <td>{scrap.IsTwoHanded}</td>
+                            <td>{scrap.IsTwoHanded ? "Yes" : "No"}</td>
                             <td>
-                                <button onClick={() => onDelete(scrap)} className="btn btn-danger">
+                                <button onClick={() => onDelete(scrap.id)} className="btn btn-danger">
                                     Delete
                                 </button>
                             </td>

@@ -37,8 +37,8 @@ const ScrapTable: React.FC<ScrapTableProps> = ({ scraps, onAdd }) => {
                         <td>{scrap.Maximumvalue}</td>
                         <td>{calculateAverage(scrap.MinimumValue, scrap.Maximumvalue)}</td>
                         <td>{scrap.Weight}</td>
-                        <td>{scrap.Conductivity}</td>
-                        <td>{scrap.IsTwoHanded}</td>
+                        <td>{scrap.Conductivity? "Conductive" : "Not conductive"}</td>
+                            <td>{scrap.IsTwoHanded ? "Two Handed" : "One Handed"}</td>
                         <td>
                             <button onClick={() => onAdd(scrap)} className="btn btn-primary">
                                 Add
