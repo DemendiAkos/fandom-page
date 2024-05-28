@@ -37,7 +37,8 @@ const SelectedScrapTable: React.FC<SelectedScrapTableProps> = ({ selectedScraps,
                         <th scope="col">Weight</th>
                         <th scope="col">Conductivity</th>
                         <th scope="col">IsTwoHanded</th>
-                        <th scope="col">DeleteButton</th>
+                        <th scope="col"></th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -48,7 +49,6 @@ const SelectedScrapTable: React.FC<SelectedScrapTableProps> = ({ selectedScraps,
                             <td>{scrap.Maximumvalue}</td>
                             <td>{calculateAverage(scrap.MinimumValue, scrap.Maximumvalue)}</td>
                             <td>{scrap.Weight}</td>
-                            <td>{scrap.Conductivity}</td>
                             <td>{scrap.Conductivity? "Conductive" : "Not conductive"}</td>
                             <td>{scrap.IsTwoHanded ? "Two Handed" : "One Handed"}</td>
                             <td>

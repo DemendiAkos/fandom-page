@@ -26,7 +26,7 @@ const ScrapTable: React.FC<ScrapTableProps> = ({ scraps, onAdd }) => {
                     <th scope="col">Weight</th>
                     <th scope="col">Conductivity</th>
                     <th scope="col">IsTwoHanded</th>
-                    
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
